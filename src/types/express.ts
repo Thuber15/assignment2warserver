@@ -1,10 +1,11 @@
-import { AuthenticatedRequestUser } from "./auth";
+import "express";
 
-declare global {
-  namespace Express {
-    interface Request {
-      user?: AuthenticatedRequestUser;
-    }
+declare module "express-serve-static-core" {
+  interface Request {
+    user?: {
+      userId: number;
+      username: string;
+    };
   }
 }
 
