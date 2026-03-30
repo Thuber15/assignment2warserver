@@ -1,11 +1,19 @@
 import { NextFunction, Request, Response } from "express";
+import type { AuthenticatedRequestUser } from "../types/auth";
 import { verifyToken } from "../utils/auth";
 import { sendError } from "../utils/http";
 
-export function requireAuth(req: Request, res: Response, next: NextFunction): Response | void {
+type AuthRequest = Request & { user?: AuthenticatedRequestUser };
+
+export function requireAuth(
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction,
+): void {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return sendError(res, 401, "Missing or invalid authorization header");
+    sendError(res, 401, "Missing or invalid authorization header");
+    return;
   }
 
   const token = authHeader.replace("Bearer ", "").trim();
@@ -15,6 +23,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction): Re
     req.user = { userId: payload.userId, username: payload.username };
     next();
   } catch {
-    return sendError(res, 401, "Invalid token");
+    sendError(res, 401, "Invalid token");
+    return;
   }
 }

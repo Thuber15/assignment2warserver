@@ -5,6 +5,7 @@ import { errorHandler } from "./middleware/errorMiddleware";
 import { requestLogger } from "./middleware/requestLogger";
 import authRoutes from "./routes/authRoutes";
 import gameRoutes from "./routes/gameRoutes";
+import userRoutes from "./routes/userRoutes";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/health", (_req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/games", gameRoutes);
+app.use("/user", userRoutes);
 app.use(errorHandler);
 
 export default app;
