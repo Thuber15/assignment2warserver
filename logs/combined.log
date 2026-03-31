@@ -16,3 +16,28 @@
 {"level":"info","message":{"durationMs":1,"method":"GET","path":"/","statusCode":404},"timestamp":"2026-03-30T16:02:01.896Z"}
 {"level":"info","message":{"durationMs":1,"method":"GET","path":"/user/register","statusCode":404},"timestamp":"2026-03-30T16:03:12.265Z"}
 {"level":"info","message":"Server listening on port 3000","timestamp":"2026-03-30T16:04:44.924Z"}
+{"level":"info","message":"Server listening on port 3050","timestamp":"2026-03-31T14:50:33.816Z"}
+{"level":"info","message":"Server listening on port 8000","timestamp":"2026-03-31T14:53:05.139Z"}
+{"level":"info","message":"Server listening on port 6000","timestamp":"2026-03-31T14:56:48.546Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","path":"/","statusCode":404},"timestamp":"2026-03-31T14:57:23.685Z"}
+{"level":"info","message":"Server listening on port 3000","timestamp":"2026-03-31T15:03:49.718Z"}
+{"level":"info","message":"Server listening on port 3000","timestamp":"2026-03-31T15:08:12.351Z"}
+{"level":"info","message":"Server listening on port 3000","timestamp":"2026-03-31T15:10:38.332Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","path":"/","statusCode":404},"timestamp":"2026-03-31T15:10:46.470Z"}
+{"level":"info","message":{"durationMs":197,"method":"POST","path":"/user/register","statusCode":201},"timestamp":"2026-03-31T15:10:55.861Z"}
+{"level":"info","message":{"durationMs":120,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:10:57.521Z"}
+{"level":"info","message":{"durationMs":130,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:11:47.471Z"}
+{"level":"info","message":{"durationMs":120,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:11:48.062Z"}
+{"level":"info","message":{"durationMs":110,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:11:59.793Z"}
+{"level":"info","message":{"durationMs":114,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:12:00.527Z"}
+{"level":"info","message":{"durationMs":112,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:12:00.714Z"}
+{"level":"info","message":{"durationMs":112,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:12:00.924Z"}
+{"level":"info","message":{"durationMs":1,"method":"GET","path":"/","statusCode":404},"timestamp":"2026-03-31T15:13:36.061Z"}
+{"level":"info","message":{"durationMs":119,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:13:38.979Z"}
+{"level":"info","message":{"durationMs":111,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:13:55.045Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","path":"/","statusCode":404},"timestamp":"2026-03-31T15:14:00.252Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","path":"/","statusCode":404},"timestamp":"2026-03-31T15:14:45.387Z"}
+{"level":"info","message":"Server listening on port 2000","timestamp":"2026-03-31T15:18:06.223Z"}
+{"level":"info","message":"Server listening on port 2000","timestamp":"2026-03-31T15:19:21.355Z"}
+{"level":"info","message":"Server listening on port 3000","timestamp":"2026-03-31T15:20:24.351Z"}
+{"level":"info","message":{"durationMs":133,"method":"POST","path":"/user","statusCode":200},"timestamp":"2026-03-31T15:26:38.701Z"}

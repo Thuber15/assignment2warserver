@@ -1,48 +1,73 @@
-# War Game Server
+# React + TypeScript + Vite
 
-Node/Express + TypeScript server for the War card game assignment.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- Student registration and login
-- JWT auth
-- Start a new game vs computer
-- Play a game round-by-round until complete
-- Save finished games to history
-- MySQL persistence
-- Winston logging
-- Strict TypeScript enabled
+Currently, two official plugins are available:
 
-## Setup
-1. Create a MySQL database.
-2. Import `schema/export/war_game.sql`.
-3. Copy `.env.example` to `.env` and fill in values.
-4. Install packages:
-   ```bash
-   npm install
-   ```
-5. Run in development:
-   ```bash
-   npm run dev
-   ```
-6. Build for production:
-   ```bash
-   npm run build
-   npm start
-   ```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## API
-### Auth
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `POST /user/register` (client-compatible alias)
-- `POST /user` (client-compatible login alias)
+## React Compiler
 
-### Games
-- `POST /api/games/start`
-- `GET /api/games/current`
-- `POST /api/games/current/play-round`
-- `GET /api/games/history`
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Notes
-- Only one active game per student is allowed at a time.
-- Card state is stored as JSON in the database to keep the logic simple and easy to inspect.
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
